@@ -1,95 +1,59 @@
-# Configuration du projet
+# Créer des routes
 
-### 💡 Comprendre la configuration de base
+### 💡 Comment créer des routes avec Next
 
 ## 📝 Tes notes
 
-Detaille ce que tu as appris ici, sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
+Détaille ce que tu as appris sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
 
 ## Comprendre
 
-Il est important de comprendre la configuration de base d’un projet. Le but ici est de parcourir les configurations dans les grandes lignes afin de comprendre ce qui à été ajouté.
+Avec React nous devons utiliser une librairie externe comme `React-Router` et ensuite gérer la configuration des routes et des composants associés à ces routes.
 
-<aside>
-💡 Beaucoup de configurations sont hautement recommandées, d’autres dépendent des préférences des développeurs
+Avec Next la création d’une route se fait simplement par ajout d’un répertoire dans `app` et d’un fichier nommé `page.jsx` ou `page.tsx` en TypeScript :
 
-</aside>
-
-### VSCode
-
-- `.vscode` : Configuration VScode pour ce projet
-  - `settings.json` : formatOnSave / ligneNumbers
-  - `extensions.json` : liste d’extensions
-
-### ESLint
-
-- dépendances supplémentaires
-
-```json
-"devDependencies": {
-    ...
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-github": "^4.10.1",
-    "eslint-plugin-json-format": "^2.0.1",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-unicorn": "^50.0.1",
-    "prettier": "^3.2.1",
-    "prettier-plugin-tailwindcss": "^0.5.11"
+```tsx
+export default function Page() {
+  return <h1>Hello, Cela est ma première route</h1>
 }
 ```
 
-- `.eslintrc.json` : semi : false
+- En terme de structure cela ressemble à :
 
-<aside>
-💡 Il faut souvent redémarrer vscode ou ESLint serveur après chaque changement de configuration
+![project-organization-colocation.png](public/exo/project-organization-colocation.png)
 
-</aside>
-
-### Prettier
-
-- `prettier.config.cjs` : semi : false
-
-### TSConfig
-
-- alias avec
-
-```
-"paths": {
-      "@/*": ["./src/*"]
-    }
-```
-
-### Next Config
-
-- `next.config.mjs`
-
-📑 Le liens vers la doc [https://nextjs.org/docs/app/api-reference/next-config-js](https://nextjs.org/docs/app/api-reference/next-config-js)
-
-### Script
-
-- Pour exécuter le `linter` ou `prettier` via CLI nous avons ajouter les script suivants :
-
-```json
-//package.json
-
-"lint": "next lint",
-"format": "prettier . --check",
-"format:fix": "prettier . --write"
-```
+📑 Le liens vers la doc [https://nextjs.org/docs/app/building-your-application/routing/defining-routes](https://nextjs.org/docs/app/building-your-application/routing/defining-routes)
 
 ## Exercice
 
-- Exécuter la commande permettant de lancer le `linter`
-- Exécuter la commande permettant de lancer le `prettier`
-- Exécuter la commande permettant de lancer le `prettier` avec correction
+Nous allons créer une première route `/exercise/about` qui affiche `“Je suis un développeur FullStack Next”`
+
+<aside>
+💡 Comme les exercices se font dans le dossier `exercise` et la solution dans le dossier `final` nous allons garder cette structure.
+
+</aside>
+
+Créer donc un dossier `about` dans le répertoire `exercise` avec un fichier `page`
+
+## Bonus
+
+### 1. 🚀 Générer une sous-arbre
+
+La hiérarchie complète des routes est appelé `Arbre` (Tree). Cette arbre est composé de sous-arbres (subtrees) qui contiennent des `racines` et des `feuilles` (dernier élément)
+
+![1-route-tree.png](public/exo/1-route-tree.png)
+
+Dans cette exercice tu vas devoir créer
+
+- un sous arbre `account` (dans `exercise`)
+- une feuille `details`
+- un sous arbre `profile`
+  - avec 2 feuilles `password` et `reset`
 
 ## Aller plus loin
 
-📑 Le liens vers la doc [https://nextjs.org/docs/app/api-reference/next-config-js](https://nextjs.org/docs/app/api-reference/next-config-js)
+📑 Le lien vers la doc [https://nextjs.org/docs/app/building-your-application/routing/defining-routes](https://nextjs.org/docs/app/building-your-application/routing/defining-routes)
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=2.Les%20Fondamentaux&entry.533578441=01%20Configuration).
+Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=Next%20Entreprise&entry.1430994900=1.Les%20Fondamentaux&entry.533578441=01%20Les%20Routes).
