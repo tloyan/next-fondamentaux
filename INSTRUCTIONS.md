@@ -33,11 +33,11 @@ Nous allons créer une première route `/exercise/about` qui affiche `“Je suis
 
 </aside>
 
-Créer donc un dossier `about` dans le répertoire `exercise` avec un fichier `page`
+Créer donc un dossier `about` dans le répertoire `exercise` avec un fichier `page.tsx`
 
 ## Bonus
 
-### 1. 🚀 Générer une sous-arbre
+### 1. 🚀 Générer un sous-arbre
 
 La hiérarchie complète des routes est appelé `Arbre` (Tree). Cette arbre est composé de sous-arbres (subtrees) qui contiennent des `racines` et des `feuilles` (dernier élément)
 
@@ -46,14 +46,31 @@ La hiérarchie complète des routes est appelé `Arbre` (Tree). Cette arbre est 
 Dans cette exercice tu vas devoir créer
 
 - un sous arbre `account` (dans `exercise`)
-- une feuille `details`
-- un sous arbre `profile`
-  - avec 2 feuilles `password` et `reset`
+  - une feuille `details`
+  - ET un sous arbre `profile`
+    - avec 2 feuilles `password` et `reset`
+
+<aside>
+💡 Constate que la route : [/final/account/profile](http://localhost:3000/final/account/profile) n’existe pas
+
+</aside>
+
+### 2. 🚀 Rendre la route profile accessible
+
+Ajoute un composant pour rendre la route accessible
 
 ## Aller plus loin
 
 📑 Le lien vers la doc [https://nextjs.org/docs/app/building-your-application/routing/defining-routes](https://nextjs.org/docs/app/building-your-application/routing/defining-routes)
 
+## Ils vont t’aider
+
+- **🐶 Mowgli le Chien** : _Mowgli te guidera dans chaque exercice._
+- **🤖 Ash le Robot** : _Ash le Robot te donnera du code utile._
+- **🚀 Julia La roquette** : _Julia te donnera des défis supplémentaires._
+- **⛏️ Hulk le Marteau** : _Quand du code à supprimer est présent_
+- **👨‍✈️ Hugo le chef de projet** : _Va t'aider sur les spécifications du projet_
+
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=Next%20Entreprise&entry.1430994900=1.Les%20Fondamentaux&entry.533578441=01%20Les%20Routes).
+Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=Next%20Entreprise&entry.1430994900=1.Les%20Fondamentaux&entry.533578441=02%20Les%20Routes).
