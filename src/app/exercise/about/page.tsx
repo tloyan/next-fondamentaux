@@ -1,9 +1,6 @@
-const Page = () => {
-  return (
-    <div>
-      <p>Je suis un développeur FullStack Next</p>
-    </div>
-  )
-}
+//export {default} from "./page.final"
 
-export default Page
+export {default} from './page.exercise'
+
+// 🚀 Convertir le composant en RCC (React Client Component)
+//export {default} from './page.bonus-1'

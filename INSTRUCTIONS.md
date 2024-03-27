@@ -1,67 +1,72 @@
-# Créer des routes
+# React Server Component
 
-### 💡 Comment créer des routes avec Next
+### 💡 Qu’est ce qu’un RSC
 
 ## 📝 Tes notes
 
-Détaille ce que tu as appris sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
+Détaille ce que tu as appris ici, sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
 
 ## Comprendre
 
-Avec React nous devons utiliser une librairie externe comme `React-Router` et ensuite gérer la configuration des routes et des composants associés à ces routes.
+Lorsqu’un développeur écris du code, il a pour but d’être exécuté quelque part. Dans le monde du web, le code est généralement exécuté soit , coté client (navigateur), soit coté serveur.
 
-Avec Next la création d’une route se fait simplement par ajout d’un répertoire dans `app` et d’un fichier nommé `page.jsx` ou `page.tsx` en TypeScript :
+React est historiquement une librairie Javascript qui est conçu pour interagir avec le DOM (dans le navigateur) mais pour des raisons de performances, d’optimisation, de SEO, des techniques de génération coté backend ont apparus, jusqu’a la proposition d’un RFC en 2020
+
+📑 Une RFC : [React Server Component](https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md)
+
+- Server Components **run only on the server and have zero impact on bundle-size**.
+- Server Components **can access server-side data sources.**
+
+Selon Vercel : _React Server Components allow you to write UI that can be rendered and optionally cached on the server. In Server Components, component logic such as data fetching and database mutations is executed exclusively on the server_
 
 ```tsx
-export default function Page() {
-  return <h1>Hello, Cela est ma première route</h1>
+export default function ReactServerComponent() {
+  return <div>Ceci est un React Server Component</div>
 }
 ```
 
-- En terme de structure cela ressemble à :
+<aside>
+💡 RSC : Juste un simple composant React.
 
-![project-organization-colocation.png](public/exo/project-organization-colocation.png)
+</aside>
 
-📑 Le liens vers la doc [https://nextjs.org/docs/app/building-your-application/routing/defining-routes](https://nextjs.org/docs/app/building-your-application/routing/defining-routes)
+Avec Next, tout composant est par default un RSC.
+
+📑 Le liens vers un article Vercel [https://vercel.com/blog/understanding-react-server-components](https://vercel.com/blog/understanding-react-server-components)
 
 ## Exercice
 
-Nous allons créer une première route `/exercise/about` qui affiche `“Je suis un développeur FullStack Next”`
-
-<aside>
-💡 Comme les exercices se font dans le dossier `exercise` et la solution dans le dossier `final` nous allons garder cette structure.
-
-</aside>
-
-Créer donc un dossier `about` dans le répertoire `exercise` avec un fichier `page.tsx`
+Maintenant que nous savons ce qu’est un RSC, nous allons faire des `console.log` pour constater dans quel environnement s’exécute notre code.
 
 ## Bonus
 
-### 1. 🚀 Générer un sous-arbre
+### 1. 🚀 Convertir le composant en RCC (React Client Component)
 
-La hiérarchie complète des routes est appelé `Arbre` (Tree). Cette arbre est composé de sous-arbres (subtrees) qui contiennent des `racines` et des `feuilles` (dernier élément)
+Par défaut les composants Next sont des RSC, mais dans certains cas nous besoins de composants RCC. Ce sont par exemple les composants qui ont besoin d’interaction utilisateur.
 
-![1-route-tree.png](public/exo/1-route-tree.png)
+🐶 Ajoute `onClick={() => alert("Hello")}` sur la `<div>` principale du composant.
 
-Dans cette exercice tu vas devoir créer
-
-- un sous arbre `account` (dans `exercise`)
-  - une feuille `details`
-  - ET un sous arbre `profile`
-    - avec 2 feuilles `password` et `reset`
+- Constate l’erreur et corrige la, à l’aide de la directive `'use client'`
 
 <aside>
-💡 Constate que la route : [/final/account/profile](http://localhost:3000/final/account/profile) n’existe pas
+💡 Nous irons plus en profondeur sur les RSC et RCC dans les modules suivants
 
 </aside>
 
-### 2. 🚀 Rendre la route profile accessible
+<aside>
+💡 A noter que les RCC sont rendu coté server aussi :
 
-Ajoute un composant pour rendre la route accessible
+</aside>
+
+📑 Le lien explication Dan Abramov [https://github.com/reactwg/server-components/discussions/4](https://github.com/reactwg/server-components/discussions/4)
 
 ## Aller plus loin
 
-📑 Le lien vers la doc [https://nextjs.org/docs/app/building-your-application/routing/defining-routes](https://nextjs.org/docs/app/building-your-application/routing/defining-routes)
+📑 Le lien vers la doc [https://nextjs.org/learn/react-foundations/server-and-client-components](https://nextjs.org/learn/react-foundations/server-and-client-components)
+
+- [https://github.com/reactwg/server-components/discussions/4](https://github.com/reactwg/server-components/discussions/4)
+
+##
 
 ## Ils vont t’aider
 
@@ -73,4 +78,4 @@ Ajoute un composant pour rendre la route accessible
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=Next%20Entreprise&entry.1430994900=1.Les%20Fondamentaux&entry.533578441=02%20Les%20Routes).
+Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=2.Les%20Fondamentaux&entry.533578441=03%20Les%20RSC).
