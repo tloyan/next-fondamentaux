@@ -1,8 +1,10 @@
+import Link from 'next/link'
+
 const Page = () => {
-  console.log('Je suis un développeur FullStack Next')
   return (
     <div>
-      <p>FINAL Je suis un développeur FullStack Next</p>
+      <p>Je suis un développeur FullStack Next</p>
+      <Link href="/exercise/account">Account</Link>
     </div>
   )
 }

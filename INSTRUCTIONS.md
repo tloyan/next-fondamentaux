@@ -1,72 +1,91 @@
-# React Server Component
+# Naviguer entre pages
 
-### 💡 Qu’est ce qu’un RSC
+### 💡 La bonne manière de naviguer avec Next
 
 ## 📝 Tes notes
 
-Détaille ce que tu as appris ici, sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
+Detaille ce que tu as appris ici, sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
 
 ## Comprendre
 
-Lorsqu’un développeur écris du code, il a pour but d’être exécuté quelque part. Dans le monde du web, le code est généralement exécuté soit , coté client (navigateur), soit coté serveur.
+Pour faire des liens en HTML nous utilisons la balise `<a>` exemple
 
-React est historiquement une librairie Javascript qui est conçu pour interagir avec le DOM (dans le navigateur) mais pour des raisons de performances, d’optimisation, de SEO, des techniques de génération coté backend ont apparus, jusqu’a la proposition d’un RFC en 2020
-
-📑 Une RFC : [React Server Component](https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md)
-
-- Server Components **run only on the server and have zero impact on bundle-size**.
-- Server Components **can access server-side data sources.**
-
-Selon Vercel : _React Server Components allow you to write UI that can be rendered and optionally cached on the server. In Server Components, component logic such as data fetching and database mutations is executed exclusively on the server_
-
-```tsx
-export default function ReactServerComponent() {
-  return <div>Ceci est un React Server Component</div>
-}
+```html
+<a href="/login">login</a>
 ```
 
-<aside>
-💡 RSC : Juste un simple composant React.
+- Lorsque l’utilisateur clique sur le lien, le navigateur va demander au serveur de fournir la ressource (charger la nouvelle page).
 
-</aside>
+Avec `React` nous souhaitons avoir une navigation fluide, c’est à dire a ne pas avoir a rechercher la page, on parle de SPA (Single Page Application)
 
-Avec Next, tout composant est par default un RSC.
+Pour garder ce concept, il faut pouvoir naviguer sans avoir à recharger la au complet.
 
-📑 Le liens vers un article Vercel [https://vercel.com/blog/understanding-react-server-components](https://vercel.com/blog/understanding-react-server-components)
+- Sur les projet React sans Framework on peut utiliser la librairie `react-router-dom` qui contient un composant `Link`
+
+```tsx
+import { Link } from "react-router-dom"
+
+<Link to="/login">Login</Link>
+```
+
+- Comme Next utilise son propre router, il fournis également son propre composant `Link` qui permet de garder le principe de SPA ainsi que d’autres optimisations / prefetch etc …
+
+```tsx
+import Link from 'next/link'
+
+function Home() {
+  return (
+    <ul>
+      <li>
+        <Link href="/">Home</Link>
+      </li>
+      <li>
+        <Link href="/about">About Us</Link>
+      </li>
+      <li>
+        <Link href="/blog/hello-world">Blog Post</Link>
+      </li>
+    </ul>
+  )
+}
+
+export default Home
+```
 
 ## Exercice
 
-Maintenant que nous savons ce qu’est un RSC, nous allons faire des `console.log` pour constater dans quel environnement s’exécute notre code.
+Dans cette exercice nous avons un lien classique `<a>` vers la route `/exercise/account`. Tu vas devoir garder ton site en SPA grâce à Link
+
+Fichiers
+
+- `exercise/about/page`
 
 ## Bonus
 
-### 1. 🚀 Convertir le composant en RCC (React Client Component)
+### 1. 🚀 Gérer la scrollbar
 
-Par défaut les composants Next sont des RSC, mais dans certains cas nous besoins de composants RCC. Ce sont par exemple les composants qui ont besoin d’interaction utilisateur.
+Quand on navigue sur des pages contenant des scrollbar, Next fait par defaut un `scrollToTop`, il nous arrive de vouloir garder la position précédente de la barre. Pour cela il existe un prop `scroll={false}`
 
-🐶 Ajoute `onClick={() => alert("Hello")}` sur la `<div>` principale du composant.
+```tsx
+<Link href="/#hashid" scroll={false}>
+  Disables scrolling to the top
+</Link>
+```
 
-- Constate l’erreur et corrige la, à l’aide de la directive `'use client'`
+📑 Le lien vers la doc [https://nextjs.org/docs/pages/api-reference/components/link#scroll-1](https://nextjs.org/docs/pages/api-reference/components/link#scroll-1https://nextjs.org/docs/pages/api-reference/components/link#scroll-1)
 
-<aside>
-💡 Nous irons plus en profondeur sur les RSC et RCC dans les modules suivants
+🐶 Dans cet exercice bonus tu vas devoir gérer correctement la navigation entre la page `/exercise/account` et `/exercise/account/details` qui contienne une scrollbar
 
-</aside>
+Fichiers
 
-<aside>
-💡 A noter que les RCC sont rendu coté server aussi :
+- `exercise/account/page`
+- `exercise/account/details/page`
 
-</aside>
-
-📑 Le lien explication Dan Abramov [https://github.com/reactwg/server-components/discussions/4](https://github.com/reactwg/server-components/discussions/4)
+###
 
 ## Aller plus loin
 
-📑 Le lien vers la doc [https://nextjs.org/learn/react-foundations/server-and-client-components](https://nextjs.org/learn/react-foundations/server-and-client-components)
-
-- [https://github.com/reactwg/server-components/discussions/4](https://github.com/reactwg/server-components/discussions/4)
-
-##
+📑 Le lien vers la doc [https://nextjs.org/docs/pages/api-reference/components/link](https://nextjs.org/docs/pages/api-reference/components/link)
 
 ## Ils vont t’aider
 
@@ -78,4 +97,4 @@ Par défaut les composants Next sont des RSC, mais dans certains cas nous besoin
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=2.Les%20Fondamentaux&entry.533578441=03%20Les%20RSC).
+Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=2.Les%20Fondamentaux&entry.533578441=04%20Les%20Liens).
