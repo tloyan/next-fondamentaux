@@ -1,4 +1,12 @@
-export {default} from './page.exercise'
+import Link from 'next/link'
 
-// 🚀 Gérer la scrollbar
-//export {default} from './page.bonus-1'
+export default function Page() {
+  return (
+    <div>
+      <h1>Page Detail du compte</h1>
+      <Link href="/exercise/account" scroll={false}>
+        Page Account
+      </Link>
+    </div>
+  )
+}
