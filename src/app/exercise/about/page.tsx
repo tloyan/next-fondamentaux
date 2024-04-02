@@ -1,3 +1,12 @@
-//export {default} from './page.final'
+import Link from 'next/link'
 
-export {default} from './page.exercise'
+const Page = () => {
+  return (
+    <div>
+      <p>Je suis un développeur FullStack Next</p>
+      <Link href="/exercise/account">Account</Link>
+    </div>
+  )
+}
+
+export default Page
