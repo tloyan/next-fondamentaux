@@ -1,12 +1,6 @@
-import Link from 'next/link'
+export {default} from './page.exercise'
 
-const Page = () => {
-  return (
-    <div>
-      <p>Je suis un développeur FullStack Next</p>
-      <Link href="/exercise/account">Account</Link>
-    </div>
-  )
-}
+// export {default} from './page.final'
 
-export default Page
+// 🚀 CSS Module
+// export {default} from './page.bonus-1'

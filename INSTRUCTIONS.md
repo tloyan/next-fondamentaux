@@ -1,6 +1,6 @@
-# Naviguer entre pages
+# Style et Font
 
-### 💡 La bonne manière de naviguer avec Next
+### 💡 Ajouter du Style et des polices
 
 ## 📝 Tes notes
 
@@ -8,53 +8,33 @@ Detaille ce que tu as appris ici, sur une page [Notion](https://go.mikecodeu
 
 ## Comprendre
 
-Pour faire des liens en HTML nous utilisons la balise `<a>` exemple
+Il existe plusieurs manière d’ajouter du style dans une application React/Next, les plus courantes sont via :
 
-```html
-<a href="/login">login</a>
-```
+- Global Styles
+- CSS modules
+- Tailwind
+- Sass
+- CSS-in-JS (Styled component, emotion etc ..)
 
-- Lorsque l’utilisateur clique sur le lien, le navigateur va demander au serveur de fournir la ressource (charger la nouvelle page).
-
-Avec `React` nous souhaitons avoir une navigation fluide, c’est à dire a ne pas avoir a rechercher la page, on parle de SPA (Single Page Application)
-
-Pour garder ce concept, il faut pouvoir naviguer sans avoir à recharger la au complet.
-
-- Sur les projet React sans Framework on peut utiliser la librairie `react-router-dom` qui contient un composant `Link`
-
-```tsx
-import { Link } from "react-router-dom"
-
-<Link to="/login">Login</Link>
-```
-
-- Comme Next utilise son propre router, il fournis également son propre composant `Link` qui permet de garder le principe de SPA ainsi que d’autres optimisations / prefetch etc …
-
-```tsx
-import Link from 'next/link'
-
-function Home() {
-  return (
-    <ul>
-      <li>
-        <Link href="/">Home</Link>
-      </li>
-      <li>
-        <Link href="/about">About Us</Link>
-      </li>
-      <li>
-        <Link href="/blog/hello-world">Blog Post</Link>
-      </li>
-    </ul>
-  )
-}
-
-export default Home
-```
+📑 Le liens vers la doc [https://nextjs.org/docs/app/building-your-application/styling](https://nextjs.org/docs/app/building-your-application/styling)
 
 ## Exercice
 
-Dans cette exercice nous avons un lien classique `<a>` vers la route `/exercise/account`. Tu vas devoir garder ton site en SPA grâce à Link
+Dans cet exercice tu vas essayer les 3 manières les plus courantes avec Next. Tu vas devoir aller modifier la page `about`.
+
+Dans un premier temps avec le Global Style du fichier `globals.css` nous avons ajouter, une classe qui permet d’agrandir la font à `26px`
+
+```css
+.title {
+  font-size: 26px; /* Définit la taille de la police à 26 pixels */
+}
+```
+
+Ensuite ajoute un style avec `tailwind` pour que le lien `<Link>` ait un style de bouton
+
+```tsx
+"rounded border border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-100"
+```
 
 Fichiers
 
@@ -62,30 +42,53 @@ Fichiers
 
 ## Bonus
 
-### 1. 🚀 Gérer la scrollbar
+### 1. 🚀 CSS Module
 
-Quand on navigue sur des pages contenant des scrollbar, Next fait par defaut un `scrollToTop`, il nous arrive de vouloir garder la position précédente de la barre. Pour cela il existe un prop `scroll={false}`
+CSS module permet d’éviter les collisions de noms (contrairement au style global). Pour fonctionner il faut créer un fichier `‘.module.css’` et l’importer exemple
 
 ```tsx
-<Link href="/#hashid" scroll={false}>
-  Disables scrolling to the top
-</Link>
+import styles from './Button.module.css'
+
+export function Button() {
+  return (
+    <button
+      type="button"
+      className={styles.error}
+    >
+      Destroy
+    </button>
+  )
+}
 ```
 
-📑 Le lien vers la doc [https://nextjs.org/docs/pages/api-reference/components/link#scroll-1](https://nextjs.org/docs/pages/api-reference/components/link#scroll-1https://nextjs.org/docs/pages/api-reference/components/link#scroll-1)
+Dans cet exercice nous avons reprise la classe `title` mais cette fois ci a 36px
 
-🐶 Dans cet exercice bonus tu vas devoir gérer correctement la navigation entre la page `/exercise/account` et `/exercise/account/details` qui contienne une scrollbar
+```css
+.title {
+  font-size: 36px; /* Définit la taille de la police à 26 pixels */
+}
+```
+
+Applique cette classe sur
+
+```tsx
+  <p>Je suis un développeur FullStack Next</p>
+```
+
+<aside>
+💡 Constate qu’il n’y a pas de collision de nom
+
+</aside>
 
 Fichiers
 
-- `exercise/account/page`
-- `exercise/account/details/page`
-
-###
+- `exercise/about/page`
 
 ## Aller plus loin
 
-📑 Le lien vers la doc [https://nextjs.org/docs/pages/api-reference/components/link](https://nextjs.org/docs/pages/api-reference/components/link)
+📑 Le lien vers la doc [https://www.w3schools.com/html/html_css.asp](https://www.w3schools.com/html/html_css.asp)
+
+##
 
 ## Ils vont t’aider
 
@@ -97,4 +100,4 @@ Fichiers
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=2.Les%20Fondamentaux&entry.533578441=04%20Les%20Liens).
+Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=Next%20PRO&entry.1430994900=2.Les%20Fondamentaux&entry.533578441=06%20Styling).

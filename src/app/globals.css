@@ -31,3 +31,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.title {
+  font-size: 26px; /* Définit la taille de la police à 26 pixels */
+}
