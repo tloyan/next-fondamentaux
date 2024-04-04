@@ -1,6 +1,6 @@
-# Style et Font
+# Style
 
-### 💡 Ajouter du Style et des polices
+### 💡 Ajouter du Style
 
 ## 📝 Tes notes
 
@@ -84,9 +84,43 @@ Fichiers
 
 - `exercise/about/page`
 
+### 2. 🚀 Style Conditionnel
+
+Il arrive souvent dans une application d’avoir besoin d’appliquer du style de manière conditionnelle, par exemple Si Erreur alors j’applique un style de texte rouge. Pour cela il existe un utilitaire qui nous simplifie le travail : [“clsx”](https://www.npmjs.com/package/clsx)
+
+```tsx
+import clsx from 'clsx';
+
+export default function OrderStatus({ status }: { status: string }) {
+  return (
+    <span
+      className={clsx(
+        'inline-flex items-center',
+        {
+          'text-red-500': status === 'pending',
+          'text-green-500': status === 'paid',
+        },
+      )}
+    >
+    // ...
+)}
+```
+
+Dans cet exercice bonus tu vas devoir adapter la page `About` et appliquer un style conditionnel `text-red-500` si l’utilisateur est un admin sur le texte `Je suis un développeur FullStack Next`.
+
+🤖 utilise le code ci dessous pour avoir un admin de manière aléatoire et utilise `isAdmin` pour faire du rendu conditionnel
+
+```tsx
+const idAdmin = Math.random() > 0.5
+```
+
+Fichiers
+
+- `exercise/about/page`
+
 ## Aller plus loin
 
-📑 Le lien vers la doc [https://www.w3schools.com/html/html_css.asp](https://www.w3schools.com/html/html_css.asp)
+📑 Le lien vers la doc [https://www.npmjs.com/package/clsx](https://www.npmjs.com/package/clsx)
 
 ##
 
