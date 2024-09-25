@@ -1,21 +1,21 @@
 import React from 'react'
-// 🤖 Ajoute les imports suivant ils seront utile pour le Layout
+// 🤖 Ajoute les imports suivants, ils seront utiles pour le Layout
 
 // import Image from 'next/image'
 // import Link from 'next/link'
 
 export default function Layout({children}: {children: React.ReactNode}) {
   return (
-    // 🐶 Par defaut, pour l'exercice nous retournons `{children}`
-    // ce qui revient à ne pas avoir de layout
-    // ⛏️ supprime la ligne ci-dessous, nous allons la remplacer par un layout
+    // 🐶 Par défaut, pour l'exercice nous retournons `{children}`
+    // Ce qui revient à ne pas avoir de layout
+    // ⛏️ Supprime la ligne ci-dessous, nous allons la remplacer par un layout
     <>{children}</>
 
-    // 🐶 Par la suite nous allons créér le Layout
+    // 🐶 Par la suite nous allons créer le Layout
 
-    // 🤖 Decommente les lignes ci-dessous pour elles contiennent
-    // - Un <main> avec un header et un footer
-    // nous avons repris le layout de l'exercice précédent
+    // 🤖 Décommente les lignes ci-dessous pour qu'elles contiennent
+    // - Un `<main>` avec un `header` et un `footer`
+    // Nous avons repris le layout de l'exercice précédent
 
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     //   <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -61,6 +61,6 @@ export default function Layout({children}: {children: React.ReactNode}) {
     //   </div>
     // </main>
 
-    // 🐶 Pense à ajouter le children `{children}` la ou tu le souhaites dans le Layout
+    // 🐶 Pense à ajouter le children `{children}` là où tu le souhaites dans le Layout
   )
 }

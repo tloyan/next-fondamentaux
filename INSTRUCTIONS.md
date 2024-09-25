@@ -1,100 +1,72 @@
-# Naviguer entre pages
+# Layout et routes
 
-### 💡 La bonne manière de naviguer avec Next
+### 💡 Comprendre les `Layout`
 
 ## 📝 Tes notes
 
-Detaille ce que tu as appris ici, sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
+Détaille ce que tu as appris ici, sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
 
 ## Comprendre
 
-Pour faire des liens en HTML nous utilisons la balise `<a>` exemple
+Lorsque l’on navigue sur un site, il y a souvent une structure commune (exemple, `menu`, `footer`, etc …) et du contenu qui change. Comme nous ne voulons pas avoir à tout recréer à chaque route, il est possible d’utiliser un `Layout`. 
 
-```html
-<a href="/login">login</a>
-```
-
-- Lorsque l’utilisateur clique sur le lien, le navigateur va demander au serveur de fournir la ressource (charger la nouvelle page).
-
-Avec `React` nous souhaitons avoir une navigation fluide, c’est à dire a ne pas avoir a rechercher la page, on parle de SPA (Single Page Application)
-
-Pour garder ce concept, il faut pouvoir naviguer sans avoir à recharger la au complet.
-
-- Sur les projet React sans Framework on peut utiliser la librairie `react-router-dom` qui contient un composant `Link`
+- Un `Layout` est une interface partagée entre plusieurs routes
+- Un `Layout` est un composant qui affiche un composant enfant `children`
 
 ```tsx
-import { Link } from "react-router-dom"
-
-<Link to="/login">Login</Link>
-```
-
-- Comme Next utilise son propre router, il fournis également son propre composant `Link` qui permet de garder le principe de SPA ainsi que d’autres optimisations / prefetch etc …
-
-```tsx
-import Link from 'next/link'
-
-function Home() {
+const Layout = ({ children }) => {
   return (
-    <ul>
-      <li>
-        <Link href="/">Home</Link>
-      </li>
-      <li>
-        <Link href="/about">About Us</Link>
-      </li>
-      <li>
-        <Link href="/blog/hello-world">Blog Post</Link>
-      </li>
-    </ul>
-  )
-}
-
-export default Home
+    <div>
+	    <h1>Mon site</h1>
+      {children}
+      <footer>2024</footer>
+    </div>
+  );
+};
 ```
+
+📑 Le lien vers la doc [https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#layouts)
 
 ## Exercice
 
-Dans cette exercice nous avons un lien classique `<a>` vers la route `/exercise/account`. Tu vas devoir garder ton site en SPA grâce à Link
+Précédemment nous avons créé les routes 
+
+- `/exercise/about`
+- `/exercise/account/details`
+- `/exercise/account/profile`
+- `/exercise/account/profile/password`
+- `/exercise/account/profile/reset`
+
+🐶 Dans cet exercice tu vas devoir créer un `Layout` commun à toutes ces routes  
 
 Fichiers
 
-- `exercise/about/page`
+- `exercise/layout`
 
 ## Bonus
 
-### 1. 🚀 Gérer la scrollbar
+### 1. 🚀 Nested Layout
 
-Quand on navigue sur des pages contenant des scrollbar, Next fait par defaut un `scrollToTop`, il nous arrive de vouloir garder la position précédente de la barre. Pour cela il existe un prop `scroll={false}`
+Il est possible d’imbriquer les `Layout`, dans cet exercice tu vas devoir créer un `Layout` imbriqué pour les routes qui se situent dans `profile`.
 
-```tsx
-<Link href="/#hashid" scroll={false}>
-  Disables scrolling to the top
-</Link>
-```
-
-📑 Le lien vers la doc [https://nextjs.org/docs/pages/api-reference/components/link#scroll-1](https://nextjs.org/docs/pages/api-reference/components/link#scroll-1https://nextjs.org/docs/pages/api-reference/components/link#scroll-1)
-
-🐶 Dans cet exercice bonus tu vas devoir gérer correctement la navigation entre la page `/exercise/account` et `/exercise/account/details` qui contienne une scrollbar
+- Comme il s’agit d’une zone (profile) où l’utilisateur doit faire attention, tu vas devoir ajouter un titre `“Zone Danger”` et un background orange
 
 Fichiers
 
-- `exercise/account/page`
-- `exercise/account/details/page`
-
-###
+- `exercise/account/profile/layout`
 
 ## Aller plus loin
 
-📑 Le lien vers la doc [https://nextjs.org/docs/pages/api-reference/components/link](https://nextjs.org/docs/pages/api-reference/components/link)
+📑 Le lien vers la doc [https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#layouts)
 
 ## Ils vont t’aider
 
-- **🐶 Mowgli le Chien** : _Mowgli te guidera dans chaque exercice._
-- **🤖 Ash le Robot** : _Ash le Robot te donnera du code utile._
-- **🚀 Julia La roquette** : _Julia te donnera des défis supplémentaires._
-- **⛏️ Hulk le Marteau** : _Quand du code à supprimer est présent_
-- **👨‍✈️ Hugo le chef de projet** : _Va t'aider sur les spécifications du projet_
+- **🐶  Mowgli le Chien** : *Mowgli te guidera dans chaque exercice.*
+- **🤖  Ash le Robot** : *Ash le Robot te donnera du code utile.*
+- **🚀 Julia La roquette** : *Julia te donnera des défis supplémentaires.*
+- **⛏️ Hulk le Marteau** : *Quand du code à supprimer est présent*
+- **👨‍✈️ Hugo le chef de projet** : *Va t'aider sur les spécifications du projet*
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=2.Les%20Fondamentaux&entry.533578441=04%20Les%20Liens).
+Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=Next%20PRO&entry.1430994900=01.Les%20Fondamentaux&entry.533578441=05%20Les%20Layouts).
