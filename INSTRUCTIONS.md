@@ -4,11 +4,11 @@
 
 ## 📝 Tes notes
 
-Detaille ce que tu as appris ici, sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
+Détaille ce que tu as appris ici, sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
 
 ## Comprendre
 
-Il est important de comprendre la configuration de base d’un projet. Le but ici est de parcourir les configurations dans les grandes lignes afin de comprendre ce qui à été ajouté.
+Il est important de comprendre la configuration de base d’un projet. Le but ici est de parcourir les configurations dans les grandes lignes afin de comprendre ce qui a été ajouté. 
 
 <aside>
 💡 Beaucoup de configurations sont hautement recommandées, d’autres dépendent des préférences des développeurs
@@ -17,9 +17,9 @@ Il est important de comprendre la configuration de base d’un projet. Le but ic
 
 ### VSCode
 
-- `.vscode` : Configuration VScode pour ce projet
-  - `settings.json` : formatOnSave / ligneNumbers
-  - `extensions.json` : liste d’extensions
+- `.vscode` : Configuration `VScode` pour ce projet
+    - `settings.json` : `formatOnSave` / `ligneNumbers`
+    - `extensions.json` : liste d’extensions
 
 ### ESLint
 
@@ -44,7 +44,7 @@ Il est important de comprendre la configuration de base d’un projet. Le but ic
 - `.eslintrc.json` : semi : false
 
 <aside>
-💡 Il faut souvent redémarrer vscode ou ESLint serveur après chaque changement de configuration
+💡 Il faut souvent redémarrer `vscode` ou `ESLint` serveur après chaque changement de configuration
 
 </aside>
 
@@ -70,7 +70,7 @@ Il est important de comprendre la configuration de base d’un projet. Le but ic
 
 ### Script
 
-- Pour exécuter le `linter` ou `prettier` via CLI nous avons ajouter les script suivants :
+- Pour exécuter le `linter` ou `prettier` via CLI nous avons ajouté les script suivants :
 
 ```json
 //package.json
@@ -84,7 +84,7 @@ Il est important de comprendre la configuration de base d’un projet. Le but ic
 
 - Exécuter la commande permettant de lancer le `linter`
 - Exécuter la commande permettant de lancer le `prettier`
-- Exécuter la commande permettant de lancer le `prettier` avec correction
+- Exécuter la commande permettant de lancer le `prettier` avec les corrections
 
 ## Aller plus loin
 
@@ -92,4 +92,4 @@ Il est important de comprendre la configuration de base d’un projet. Le but ic
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=2.Les%20Fondamentaux&entry.533578441=01%20Configuration).
+Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=Next%20PRO&entry.1430994900=01.Les%20Fondamentaux&entry.533578441=01%20Configuration).
