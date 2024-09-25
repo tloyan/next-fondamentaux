@@ -1,5 +1,5 @@
 const Page = () => {
-  // 🐶 Determine danq quel environnement s'execute ce composant grâce à un log
+  // 🐶 Détermine dans quel environnement s'exécute ce composant grâce à un log
   // 🤖 `console.log('Je suis un développeur FullStack Next')`
   //
   // 🐶 Vérifie dans la console du navigateur et dans la console du serveur (terminal)

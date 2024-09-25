@@ -1,6 +1,6 @@
 # React Server Component
 
-### 💡 Qu’est ce qu’un RSC
+### 💡 Qu’est-ce qu’un RSC
 
 ## 📝 Tes notes
 
@@ -8,16 +8,16 @@ Détaille ce que tu as appris ici, sur une page [Notion](https://go.mikecode
 
 ## Comprendre
 
-Lorsqu’un développeur écris du code, il a pour but d’être exécuté quelque part. Dans le monde du web, le code est généralement exécuté soit , coté client (navigateur), soit coté serveur.
+Lorsqu’un développeur écrit du code, il a pour but d’être exécuté quelque part. Dans le monde du web, le code est généralement exécuté soit , côté client (navigateur), soit côté serveur.
 
-React est historiquement une librairie Javascript qui est conçu pour interagir avec le DOM (dans le navigateur) mais pour des raisons de performances, d’optimisation, de SEO, des techniques de génération coté backend ont apparus, jusqu’a la proposition d’un RFC en 2020
+`React` est historiquement une librairie Javascript qui est conçue pour interagir avec le DOM (dans le navigateur) mais pour des raisons de performances, d’optimisation, de SEO, des techniques de génération côté backend ont apparu, jusqu'à la proposition d’un RFC en 2020
 
-📑 Une RFC : [React Server Component](https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md)
+📑 Une RFC : [React Server Component](https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md) 
 
 - Server Components **run only on the server and have zero impact on bundle-size**.
 - Server Components **can access server-side data sources.**
 
-Selon Vercel : _React Server Components allow you to write UI that can be rendered and optionally cached on the server. In Server Components, component logic such as data fetching and database mutations is executed exclusively on the server_
+Selon `Vercel` : *React Server Components allow you to write UI that can be rendered and optionally cached on the server. In Server Components, component logic such as data fetching and database mutations is executed exclusively on the server*
 
 ```tsx
 export default function ReactServerComponent() {
@@ -26,25 +26,29 @@ export default function ReactServerComponent() {
 ```
 
 <aside>
-💡 RSC : Juste un simple composant React.
+💡 RSC : Juste un simple composant `React`.
 
 </aside>
 
-Avec Next, tout composant est par default un RSC.
+Avec Next, tout composant est par défaut un RSC.
 
-📑 Le liens vers un article Vercel [https://vercel.com/blog/understanding-react-server-components](https://vercel.com/blog/understanding-react-server-components)
+📑 Le lien vers un article `Vercel` : [https://vercel.com/blog/understanding-react-server-components](https://vercel.com/blog/understanding-react-server-components)
 
 ## Exercice
 
 Maintenant que nous savons ce qu’est un RSC, nous allons faire des `console.log` pour constater dans quel environnement s’exécute notre code.
 
+Fichiers
+
+- `exercise/about/page.exercice`
+
 ## Bonus
 
 ### 1. 🚀 Convertir le composant en RCC (React Client Component)
 
-Par défaut les composants Next sont des RSC, mais dans certains cas nous besoins de composants RCC. Ce sont par exemple les composants qui ont besoin d’interaction utilisateur.
+Par défaut les composants Next sont des RSC, mais dans certains cas nous avons besoins de composants RCC. Ce sont par exemple les composants qui ont besoin d’interaction utilisateur. 
 
-🐶 Ajoute `onClick={() => alert("Hello")}` sur la `<div>` principale du composant.
+🐶 Ajoute `onClick={() => alert("Hello")}` sur la `<div>` principale du composant. 
 
 - Constate l’erreur et corrige la, à l’aide de la directive `'use client'`
 
@@ -54,11 +58,15 @@ Par défaut les composants Next sont des RSC, mais dans certains cas nous besoin
 </aside>
 
 <aside>
-💡 A noter que les RCC sont rendu coté server aussi :
+💡 À noter que les RCC sont rendus côté serveur aussi
 
 </aside>
 
-📑 Le lien explication Dan Abramov [https://github.com/reactwg/server-components/discussions/4](https://github.com/reactwg/server-components/discussions/4)
+Fichiers
+
+- `exercise/about/page.exercice`
+
+📑 Lien explication Dan Abramov  [https://github.com/reactwg/server-components/discussions/4](https://github.com/reactwg/server-components/discussions/4)
 
 ## Aller plus loin
 
@@ -66,16 +74,14 @@ Par défaut les composants Next sont des RSC, mais dans certains cas nous besoin
 
 - [https://github.com/reactwg/server-components/discussions/4](https://github.com/reactwg/server-components/discussions/4)
 
-##
-
 ## Ils vont t’aider
 
-- **🐶 Mowgli le Chien** : _Mowgli te guidera dans chaque exercice._
-- **🤖 Ash le Robot** : _Ash le Robot te donnera du code utile._
-- **🚀 Julia La roquette** : _Julia te donnera des défis supplémentaires._
-- **⛏️ Hulk le Marteau** : _Quand du code à supprimer est présent_
-- **👨‍✈️ Hugo le chef de projet** : _Va t'aider sur les spécifications du projet_
+- **🐶  Mowgli le Chien** : *Mowgli te guidera dans chaque exercice.*
+- **🤖  Ash le Robot** : *Ash le Robot te donnera du code utile.*
+- **🚀 Julia La roquette** : *Julia te donnera des défis supplémentaires.*
+- **⛏️ Hulk le Marteau** : *Quand du code à supprimer est présent*
+- **👨‍✈️ Hugo le chef de projet** : *Va t'aider sur les spécifications du projet*
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=2.Les%20Fondamentaux&entry.533578441=03%20Les%20RSC).
+Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-next-avis?entry.1912869708=Next%20PRO&entry.1430994900=01.Les%20Fondamentaux&entry.533578441=03%20Les%20RSC).
