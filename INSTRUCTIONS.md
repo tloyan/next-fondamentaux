@@ -63,7 +63,6 @@ Fichiers
 
 - `exercise/account/page`
 - `exercise/account/details/page`
-- `exercise/account/profile/page`
 - `exercise/account/profile/password/page`
 - `exercise/account/profile/reset/page`
 
