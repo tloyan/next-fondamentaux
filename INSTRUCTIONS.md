@@ -8,7 +8,7 @@ Détaille ce que tu as appris ici, sur une page [Notion](https://go.mikecode
 
 ## Comprendre
 
-Il est important de comprendre la configuration de base d’un projet. Le but ici est de parcourir les configurations dans les grandes lignes afin de comprendre ce qui a été ajouté. 
+Il est important de comprendre la configuration de base d’un projet. Le but ici est de parcourir les configurations dans les grandes lignes afin de comprendre ce qui a été ajouté.
 
 <aside>
 💡 Beaucoup de configurations sont hautement recommandées, d’autres dépendent des préférences des développeurs
@@ -18,8 +18,8 @@ Il est important de comprendre la configuration de base d’un projet. Le but ic
 ### VSCode
 
 - `.vscode` : Configuration `VScode` pour ce projet
-    - `settings.json` : `formatOnSave` / `ligneNumbers`
-    - `extensions.json` : liste d’extensions
+  - `settings.json` : `formatOnSave` / `ligneNumbers`
+  - `extensions.json` : liste d’extensions
 
 ### ESLint
 
